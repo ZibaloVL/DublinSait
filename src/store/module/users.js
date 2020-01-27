@@ -8,7 +8,10 @@ export default {
       email: null,
       password: null
     },
-    errorRegistration: null,
+    errorRegistration: {
+      code: null,
+      message: null
+    },
     isAutorizate: false
   },
   getters: {
@@ -22,8 +25,8 @@ export default {
       state.dataUserRegistration.password = payload.password
     },
     set_errorRegistration (state, payload) {
-      state.errorRegistration.error.code = payload.error.code
-      state.errorRegistration.error.message = payload.error.message
+      state.errorRegistration.code = payload.code
+      state.errorRegistration.message = payload.message
     },
     set_isAutorizate (state, payload) { state.isAutorizate = payload }
   },
@@ -36,16 +39,19 @@ export default {
           console.log(data.user.uid)
           if (data.user.uid) {
             commit('set_isAutorizate', true)
-            commit('set_errorRegistration', { errorCode: null, errorMessage: null })
+            commit('set_errorRegistration', { code: null, message: null })
           }
         })
-        .catch(function (error) {
-        // Handle Errors here.
-          console.log(error.code)
-          console.log(error.message)
-          commit('set_errorRegistration', error)
+        .catch(
+          function (error) {
+          // Handle Errors here.
+          // console.log(error.code)
+          // console.log(error.message)
+            console.log('ERRROO')
+            commit('set_errorRegistration', error)
           // ...
-        })
+          }
+        )
     }
   }
 }

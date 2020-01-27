@@ -76,7 +76,6 @@ export default {
       name: null,
       password: null,
       email: null,
-      accept: false,
       blockSubmit: false
     }
   },
@@ -95,6 +94,8 @@ export default {
           icon: 'cloud_done',
           message: 'Submitted'
         })
+        this.onReset()
+        this.$router.push({ path: '/' })
       }
     }
   },
@@ -113,8 +114,7 @@ export default {
 
     onReset () {
       this.name = null
-      this.age = null
-      this.accept = false
+      this.password = null
       this.email = null
     }
   }
