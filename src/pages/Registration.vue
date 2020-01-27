@@ -29,17 +29,6 @@
             :rules="[ val => val && val.length > 0 || 'Please type something']"
           />
           <q-input
-            v-model="age"
-            filled
-            type="number"
-            label="Your age *"
-            lazy-rules
-            :rules="[
-              val => val !== null && val !== '' || 'Please type your age',
-              val => val > 0 && val < 100 || 'Please type a real age'
-            ]"
-          />
-          <q-input
             v-model="email"
             filled
             type="email"
@@ -47,6 +36,15 @@
             :rules="[
               val => val !== null && val !== '' || 'Please type your email',
               val => val.match(/^[0-9a-z-\.]+\@[0-9a-z-]{2,}\.[a-z]{2,}$/i) || 'Please type a real email'
+            ]"
+          />
+          <q-input
+            v-model="password"
+            filled
+            label="You password"
+            lazy-rules
+            :rules="[
+              val => val !== null && val !== '' || 'Please type your age',
             ]"
           />
           <div>
@@ -71,26 +69,45 @@
 </template>
 
 <script>
+import { mapGetters, mapActions } from 'vuex'
 export default {
   data () {
     return {
       name: null,
-      age: null,
+      password: null,
       email: null,
       accept: false,
       blockSubmit: false
     }
   },
   computed: {
+    ...mapGetters({
+      get_errorRegistration: 'get_errorRegistration',
+      get_isAutorizate: 'get_isAutorizate'
+    })
+  },
+  watch: {
+    get_isAutorizate: function (newval, oldval) {
+      if (newval) {
+        this.$q.notify({
+          color: 'green-4',
+          textColor: 'white',
+          icon: 'cloud_done',
+          message: 'Submitted'
+        })
+      }
+    }
   },
   methods: {
+    ...mapActions({
+      regUser: 'regUser'
+    }),
     onSubmit () {
       this.blockSubmit = true
-      this.$q.notify({
-        color: 'green-4',
-        textColor: 'white',
-        icon: 'cloud_done',
-        message: 'Submitted'
+      this.regUser({
+        name: this.name,
+        email: this.email,
+        password: this.password
       })
     },
 
