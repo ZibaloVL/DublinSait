@@ -6,22 +6,24 @@
       class="my-card text-black  col-12 col-sm-6 fixed-center"
     >
       <q-card-section>
-        <div class="text-h6">Leave the site?</div>
+        <div class="text-h6">
+          Leave the site?
+        </div>
       </q-card-section>
       <q-card-section class="q-pt-none">
-            <q-btn
-              label="Sign out"
-              color="primary"
-              :disable="blockSubmit"
-              @click="click_SignOut"
-            />
-            <q-btn
-              label="Cansel"
-              type="reset"
-              color="primary"
-              flat
-              class="q-ml-sm"
-            />
+        <q-btn
+          label="Sign out"
+          color="primary"
+          :disable="blockSubmit"
+          @click="click_SignOut"
+        />
+        <q-btn
+          label="Cansel"
+          color="primary"
+          flat
+          class="q-ml-sm"
+          @click="cansel_SignOut"
+        />
       </q-card-section>
     </q-card>
   </div>
@@ -43,6 +45,9 @@ export default {
       get_isAutorizate: 'get_isAutorizate'
     })
   },
+  mounted () {
+    this.blockSubmit = !this.get_isAutorizate
+  },
   watch: {
     get_isAutorizate: function (newval, oldval) {
       if (!newval) {
@@ -62,9 +67,11 @@ export default {
       signOutUser: 'signOutUser'
     }),
     click_SignOut () {
-      console.log('click_SignOut in front')
       this.blockSubmit = true
       this.signOutUser()
+    },
+    cansel_SignOut () {
+      this.$router.push({ path: '/' })
     }
   }
 }

@@ -1,8 +1,17 @@
 // import Vue from 'vue'
 import firebase from 'firebase'
+import Vue from 'vue'
 
 export default {
   state: {
+
+    user: {
+      // central object user
+      name: null,
+      email: null,
+      uid: null
+      // status: null may bi in element
+    },
     dataUserRegistration: {
       name: null,
       email: null,
@@ -16,9 +25,15 @@ export default {
   },
   getters: {
     get_errorRegistration: (state) => state.errorRegistration,
-    get_isAutorizate: (state) => state.isAutorizate
+    get_isAutorizate: (state) => state.isAutorizate,
+    get_User: (state) => state.user
   },
   mutations: {
+    set_User (state, payload) {
+      for (let key in payload) {
+        Vue.set(state.user, key, payload[key])
+      }
+    },
     set_dataUserRegistration (state, payload) {
       state.dataUserRegistration.name = payload.name
       state.dataUserRegistration.email = payload.email
@@ -37,11 +52,27 @@ export default {
       commit('set_dataUserRegistration', payload)
       firebase.auth().createUserWithEmailAndPassword(payload.email, payload.password)
         .then((data) => {
-          console.log(data.user.uid)
-          if (data.user.uid) {
-            commit('set_isAutorizate', true)
-            commit('set_errorRegistration', { code: null, message: null })
-          }
+          console.log('data.user.uid', data.user.uid)
+          var user = firebase.auth().currentUser
+          user.updateProfile({
+            displayName: payload.name
+          }).then
+          return user
+        })
+        .then((data) => {
+          console.log('data', data)
+          commit('set_isAutorizate', true)
+          commit('set_errorRegistration', { code: null, message: null })
+          commit('set_dataUserRegistration', {
+            name: null,
+            email: null,
+            password: null
+          })
+          commit('set_User', {
+            name: data.displayName,
+            email: data.email,
+            uid: data.uid
+          })
         })
         .catch(
           function (error) {
@@ -60,9 +91,19 @@ export default {
       firebase.auth().signInWithEmailAndPassword(payload.email, payload.password)
         .then((data) => {
           if (data.user.uid) {
-            console.log('data.user.uid___', data.user.uid)
             commit('set_isAutorizate', true)
             commit('set_errorRegistration', { code: null, message: null })
+            // else add element in User require in this commit
+            commit('set_User', {
+              name: data.user.displayName,
+              email: data.user.email,
+              uid: data.user.uid
+            })
+            commit('set_dataUserRegistration', {
+              name: null,
+              email: null,
+              password: null
+            })
           }
         })
         .catch(
@@ -87,8 +128,16 @@ export default {
       firebase.auth().signOut()
         .then(() => {
           console.log('SIGN OUT!!!')
+          commit('set_dataUserRegistration', {
+            name: null,
+            email: null,
+            password: null
+          })
           commit('set_isAutorizate', false)
-          commit('set_errorRegistration', { code: null, message: null })
+          commit('set_errorRegistration', {
+            code: null,
+            message: null
+          })
         })
         .catch(
           function (error) {
