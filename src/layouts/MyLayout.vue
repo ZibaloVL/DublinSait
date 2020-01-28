@@ -34,13 +34,12 @@
             <q-item-label>Registration</q-item-label>
           </q-item-section>
         </q-item>
-        <q-item clickable tag="a" target="_blank" href="https://github.quasar.dev">
+        <q-item clickable tag="a"  to="/sign">
           <q-item-section avatar>
             <q-icon name="code" />
           </q-item-section>
           <q-item-section>
-            <q-item-label>Github</q-item-label>
-            <q-item-label caption>github.com/quasarframework</q-item-label>
+            <q-item-label>Sign</q-item-label>
           </q-item-section>
         </q-item>
         <q-item clickable tag="a" target="_blank" href="https://chat.quasar.dev">
