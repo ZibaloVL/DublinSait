@@ -80,8 +80,8 @@ export default {
         this.$q.notify({
           color: 'green-4',
           textColor: 'white',
-          icon: 'cloud_done',
-          message: 'Submitted'
+          icon: 'account_box',
+          message: 'You logged in'
         })
         this.onReset()
         this.$router.push({ path: '/' })

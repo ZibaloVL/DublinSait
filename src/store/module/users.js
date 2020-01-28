@@ -32,9 +32,8 @@ export default {
   },
   actions: {
 
-    // registration user in sait
+    // registration user in sait---------------------------------------------------------------
     regUser ({ commit }, payload) {
-      // console.log(payload)
       commit('set_dataUserRegistration', payload)
       firebase.auth().createUserWithEmailAndPassword(payload.email, payload.password)
         .then((data) => {
@@ -55,9 +54,8 @@ export default {
           }
         )
     },
-    // sign in user in sait
+    // sign in user in sait--------------------------------------------------------------------
     signUser ({ commit }, payload) {
-      // console.log(payload)
       commit('set_dataUserRegistration', payload)
       firebase.auth().signInWithEmailAndPassword(payload.email, payload.password)
         .then((data) => {
@@ -73,7 +71,32 @@ export default {
           // console.log(error.code)
           // console.log(error.message)
             console.log('ERRROO')
-            commit('set_errorRegistration', error)
+            commit('set_errorSignIn', error)
+          // ...
+          }
+        )
+    },
+    // sign out user --------------------------------------------------------------------
+    signOutUser ({ commit }) {
+      let payload = {
+        name: null,
+        email: null,
+        password: null
+      }
+      commit('set_dataUserRegistration', payload)
+      firebase.auth().signOut()
+        .then(() => {
+          console.log('SIGN OUT!!!')
+          commit('set_isAutorizate', false)
+          commit('set_errorRegistration', { code: null, message: null })
+        })
+        .catch(
+          function (error) {
+          // Handle Errors here.
+          // console.log(error.code)
+          // console.log(error.message)
+            console.log('ERRROO')
+            commit('set_errorSignOut', error)
           // ...
           }
         )

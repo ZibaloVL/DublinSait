@@ -91,8 +91,8 @@ export default {
         this.$q.notify({
           color: 'green-4',
           textColor: 'white',
-          icon: 'cloud_done',
-          message: 'Submitted'
+          icon: 'accessibility_new',
+          message: 'Successful registration'
         })
         this.onReset()
         this.$router.push({ path: '/' })
