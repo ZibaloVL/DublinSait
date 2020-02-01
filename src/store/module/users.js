@@ -4,7 +4,6 @@ import Vue from 'vue'
 
 export default {
   state: {
-
     user: {
       // central object user
       name: null,
@@ -52,14 +51,6 @@ export default {
       commit('set_dataUserRegistration', payload)
       firebase.auth().createUserWithEmailAndPassword(payload.email, payload.password)
         .then((data) => {
-          console.log('data.user.uid', data.user.uid)
-          var user = firebase.auth().currentUser
-          user.updateProfile({
-            displayName: payload.name
-          }).then
-          return user
-        })
-        .then((data) => {
           console.log('data', data)
           commit('set_isAutorizate', true)
           commit('set_errorRegistration', { code: null, message: null })
@@ -69,10 +60,14 @@ export default {
             password: null
           })
           commit('set_User', {
-            name: data.displayName,
-            email: data.email,
-            uid: data.uid
+            name: payload.name,
+            email: data.user.email,
+            uid: data.user.uid
           })
+        })
+        .then(() => {
+          var user = firebase.auth().currentUser
+          user.updateProfile({ displayName: payload.name })
         })
         .catch(
           function (error) {
@@ -112,7 +107,7 @@ export default {
           // console.log(error.code)
           // console.log(error.message)
             console.log('ERRROO')
-            commit('set_errorSignIn', error)
+            commit('set_errorRegistration', error)
           // ...
           }
         )
@@ -138,15 +133,16 @@ export default {
             code: null,
             message: null
           })
+          commit('set_User', {
+            name: null,
+            email: null,
+            uid: null
+          })
         })
         .catch(
           function (error) {
-          // Handle Errors here.
-          // console.log(error.code)
-          // console.log(error.message)
             console.log('ERRROO')
             commit('set_errorSignOut', error)
-          // ...
           }
         )
     }
