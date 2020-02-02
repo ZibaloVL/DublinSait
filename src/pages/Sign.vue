@@ -6,7 +6,9 @@
       class="my-card text-black  col-12 col-sm-6 fixed-center"
     >
       <q-card-section>
-        <div class="text-h6">Sign in</div>
+        <div class="text-h6">
+          Sign in
+        </div>
         <div class="text-subtitle2">
           by Admin
         </div>

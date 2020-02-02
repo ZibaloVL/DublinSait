@@ -45,9 +45,6 @@ export default {
       get_isAutorizate: 'get_isAutorizate'
     })
   },
-  mounted () {
-    this.blockSubmit = !this.get_isAutorizate
-  },
   watch: {
     get_isAutorizate: function (newval, oldval) {
       if (!newval) {
@@ -61,6 +58,9 @@ export default {
         this.$router.push({ path: '/' })
       }
     }
+  },
+  mounted () {
+    this.blockSubmit = !this.get_isAutorizate
   },
   methods: {
     ...mapActions({
