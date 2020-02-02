@@ -2,7 +2,7 @@
 // so you can safely delete all default props below
 
 export default {
-  registration: 'Registration',
-  sigIn: 'Sign',
-  sigUot: 'Sign out '
+  registration: 'Регистрация',
+  sigIn: 'Войти',
+  signOut: 'Выйти'
 }

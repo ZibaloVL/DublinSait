@@ -37,7 +37,7 @@
             <q-icon name="school" />
           </q-item-section>
           <q-item-section>
-            <q-item-label>Registration</q-item-label>
+            <q-item-label>{{$t('registration')}}</q-item-label>
           </q-item-section>
         </q-item>
         <q-item clickable tag="a"  to="/sign">
@@ -45,7 +45,7 @@
             <q-icon name="code" />
           </q-item-section>
           <q-item-section>
-            <q-item-label>Sign</q-item-label>
+            <q-item-label>{{$t('sigIn')}}</q-item-label>
           </q-item-section>
         </q-item>
         <q-item clickable tag="a" to="/signout">
@@ -53,7 +53,7 @@
             <q-icon name="chat" />
           </q-item-section>
           <q-item-section>
-            <q-item-label>Sign Out</q-item-label>
+            <q-item-label>{{$t('signOut')}}</q-item-label>
           </q-item-section>
         </q-item>
         <q-item clickable tag="a" target="_blank" href="https://forum.quasar.dev">
@@ -100,8 +100,8 @@ export default {
     return {
       leftDrawerOpen: false,
       showRo: true,
-      showEn: true,
-      showRu: false
+      showEn: false,
+      showRu: true
     }
   },
   methods: {

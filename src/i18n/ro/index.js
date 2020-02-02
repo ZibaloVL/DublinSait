@@ -4,5 +4,5 @@
 export default {
   registration: 'Registration',
   sigIn: 'Sign',
-  sigUot: 'Sign out '
+  signOut: 'Sign out '
 }
