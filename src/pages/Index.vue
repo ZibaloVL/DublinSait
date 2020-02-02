@@ -1,14 +1,19 @@
 <template>
-  <q-page class="flex flex-center">
+<!--
     <img
       alt="Quasar logo"
       src="~assets/quasar-logo-full.svg"
     >
-  </q-page>
+-->
+    <main-carusel></main-carusel>
 </template>
 
 <script>
+import MainCarusel from '../components/mainCarusel'
 export default {
-  name: 'PageIndex'
+  name: 'PageIndex',
+  components: {
+    MainCarusel
+  }
 }
 </script>
