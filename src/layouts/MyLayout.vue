@@ -15,7 +15,13 @@
           Quasar App
         </q-toolbar-title>
 
-        <div>Quasar v{{ $q.version }}</div>
+        <q-separator v-show="showEn" dark vertical />
+        <q-btn v-show="showEn" @click="changeLang('en-us')" stretch flat label="EN"/>
+        <q-separator v-show="showRo" dark vertical />
+        <q-btn v-show="showRo" @click="changeLang('ro')" stretch flat label="RO"/>
+        <q-separator v-show="showRu" dark vertical />
+        <q-btn v-show="showRu" @click="changeLang('ru')" stretch flat label="RU"/>
+        <q-separator dark vertical />
       </q-toolbar>
     </q-header>
 
@@ -92,7 +98,32 @@ export default {
 
   data () {
     return {
-      leftDrawerOpen: false
+      leftDrawerOpen: false,
+      showRo: true,
+      showEn: true,
+      showRu: false
+    }
+  },
+  methods: {
+    changeLang (locale) {
+      this.$i18n.locale = locale
+      switch (locale) {
+        case 'ro':
+          this.showRo = false
+          this.showEn = true
+          this.showRu = true
+          break
+        case 'en-us':
+          this.showEn = false
+          this.showRo = true
+          this.showRu = true
+          break
+        case 'ru':
+          this.showRu = false
+          this.showEn = true
+          this.showRo = true
+          break
+      }
     }
   }
 }
