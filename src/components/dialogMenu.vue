@@ -1,53 +1,75 @@
 <template>
   <div class="q-pa-md q-gutter-sm">
-    <q-btn label="Click me" color="primary" @click="layout = true" />
+    <q-btn label="Carousel" color="primary" @click="carousel = true" />
     <q-dialog
-      v-model="layout"
-     :content-style="{ color: '#ff0000' }"
+      v-model="carousel"
+      full-width
+      full-height
     >
-      <q-layout
-        view="Lhh lpR fff"
-        container
-        class="bg-white"
+      <q-carousel
+        transition-prev="fade"
+        transition-next="fade"
+        swipeable
+        animated
+        v-model="slide"
+        control-color="primary"
+        navigation-icon="radio_button_unchecked"
+        navigation
+        padding
+        class="bg-white shadow-1 rounded-borders "
       >
-        <q-header class="bg-primary">
-          <q-toolbar>
-            <q-toolbar-title>Header</q-toolbar-title>
-            <q-btn flat @click="drawerR = !drawerR" round dense icon="menu" />
-            <q-btn flat v-close-popup round dense icon="close" />
-          </q-toolbar>
-        </q-header>
-        <q-drawer side="right" bordered v-model="drawerR" :width="200" :breakpoint="300" content-class="bg-grey-3 q-pa-sm">
-          <div v-for="n in 12" :key="n">Drawer {{ n }} / 12</div>
-        </q-drawer>
-        <q-page-container
-          style="height: 100vh"
+        <q-carousel-slide
+          v-for="(img, index) in images"
+          :key="index"
+          :name="img"
+          class="column no-wrap flex-center "
         >
-            <q-img v-for="n in contentSize"
-              :key="n"
-              :src="require(`assets/menu/pagesMenuDuble/menuDoblle${n}.jpg`)"
-              style="width: 100%;"
+          <q-img
+              :src="require(`assets/menu/pagesMenuDuble/menuDoblle${img}.jpg`)"
+              style="max-width: 1100px; height: auto;"
+              class="shadow-15"
             />
-        </q-page-container>
-      </q-layout>
+        </q-carousel-slide>
+      <!--
+        <q-carousel-slide :name="2" class="column no-wrap flex-center">
+        </q-carousel-slide>
+        <q-carousel-slide :name="3" class="column no-wrap flex-center">
+          <q-icon name="layers" color="primary" size="56px" />
+          <div class="q-mt-md text-center">
+            {{ lorem }}
+          </div>
+        </q-carousel-slide>
+        <q-carousel-slide :name="4" class="column no-wrap flex-center">
+          <q-icon name="terrain" color="primary" size="56px" />
+          <div class="q-mt-md text-center">
+            {{ lorem }}
+          </div>
+        </q-carousel-slide>
+      -->
+      </q-carousel>
     </q-dialog>
   </div>
 </template>
+
 <script>
 export default {
   data () {
     return {
-      layout: false,
-      moreContent: true,
-      drawer: false,
-      drawerR: false
-    }
-  },
+      carousel: false,
+      images: [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 ],
 
-  computed: {
-    contentSize () {
-      return this.moreContent ? 12 : 1
+      slide: 1,
+      lorem: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus, ratione eum minus fuga, quasi dicta facilis corporis magnam, suscipit at quo nostrum!'
     }
   }
 }
 </script>
+
+<!--
+
+ <q-img v-for="n in contentSize"
+              :key="n"
+              :src="require(`assets/menu/pagesMenuDuble/menuDoblle${n}.jpg`)"
+              style="width: 100%;"
+            />
+-->
