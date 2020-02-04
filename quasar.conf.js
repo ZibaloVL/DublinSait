@@ -51,9 +51,15 @@ module.exports = function (ctx) {
         'QCardActions',
         'QCarousel',
         'QCarouselControl',
-        'QCarouselSlide'
+        'QCarouselSlide',
+        'QDialog',
+        'QImg',
+        'QPageContainer',
+        'QPage'
       ],
-      directives: [],
+      directives: [
+        'ClosePopup'
+      ],
 
       // Quasar plugins
       plugins: [

@@ -5,15 +5,20 @@
       src="~assets/quasar-logo-full.svg"
     >
 -->
-    <main-carusel></main-carusel>
+<div>
+  <main-carusel></main-carusel>
+  <dialog-menu></dialog-menu>
+</div>
 </template>
 
 <script>
 import MainCarusel from '../components/mainCarusel'
+import DialogMenu from '../components/dialogMenu'
 export default {
   name: 'PageIndex',
   components: {
-    MainCarusel
+    MainCarusel,
+    DialogMenu
   }
 }
 </script>
