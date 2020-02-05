@@ -1,6 +1,9 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-    <q-header elevated>
+    <q-header
+      elevated
+      style="background:#217866;"
+    >
       <q-toolbar>
         <q-btn
           flat
@@ -18,6 +21,7 @@
           :label="$t('menuFood')"
           flat
           @click="menuFoodOnOff()" />
+        <q-btn :label="$t('location')" flat @click="set_mapsOnOff()" />
         <q-separator v-show="showEn" dark vertical />
         <q-btn v-show="showEn" @click="changeLang('en-us')" stretch flat label="EN"/>
         <q-separator v-show="showRo" dark vertical />
@@ -110,12 +114,15 @@ export default {
   },
   computed: {
     ...mapGetters({
-      menuFoodOnOf: 'get_menuOnOff'// from module "foodMenu"
+      menuFoodOnOf: 'get_menuOnOff', // from module "foodMenu"
+      mapsOnOff: 'get_mapsOnOff'// from mapsDialog
     })
   },
   methods: {
     ...mapMutations({
-      menuFoodOnOff: 'set_menuOnOff'
+      menuFoodOnOff: 'set_menuOnOff',
+      set_mapsOnOff: 'set_mapsOnOff'
+
     }),
     changeLang (locale) {
       this.$i18n.locale = locale

@@ -3,6 +3,7 @@ import Vuex from 'vuex'
 
 import users from './module/users'
 import foodMenu from './module/foodMenu'
+import mapsDialog from './module/mapsDialog'
 // import example from './module-example'
 
 Vue.use(Vuex)
@@ -20,7 +21,8 @@ export default function (/* { ssrContext } */) {
   const Store = new Vuex.Store({
     modules: {
       users,
-      foodMenu
+      foodMenu,
+      mapsDialog
     },
 
     // enable strict mode (adds overhead!)

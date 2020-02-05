@@ -5,5 +5,6 @@ export default {
   registration: 'Регистрация',
   sigIn: 'Войти',
   signOut: 'Выйти',
-  menuFood: 'Меню'
+  menuFood: 'Меню',
+  location: 'Как нас найти'
 }
