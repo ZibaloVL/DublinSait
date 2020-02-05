@@ -1,6 +1,6 @@
 <template>
   <div class="q-pa-md q-gutter-sm">
-    <q-btn label="Carousel" color="primary" @click="carousel = true" />
+    <!-- <q-btn label="Carousel" color="primary" @click="carousel = true" /> -->
     <q-dialog
       v-model="carousel"
       full-width
@@ -30,37 +30,38 @@
               class="shadow-15"
             />
         </q-carousel-slide>
-      <!--
-        <q-carousel-slide :name="2" class="column no-wrap flex-center">
-        </q-carousel-slide>
-        <q-carousel-slide :name="3" class="column no-wrap flex-center">
-          <q-icon name="layers" color="primary" size="56px" />
-          <div class="q-mt-md text-center">
-            {{ lorem }}
-          </div>
-        </q-carousel-slide>
-        <q-carousel-slide :name="4" class="column no-wrap flex-center">
-          <q-icon name="terrain" color="primary" size="56px" />
-          <div class="q-mt-md text-center">
-            {{ lorem }}
-          </div>
-        </q-carousel-slide>
-      -->
       </q-carousel>
     </q-dialog>
   </div>
 </template>
 
 <script>
+import { mapGetters, mapMutations } from 'vuex'
 export default {
   data () {
     return {
       carousel: false,
       images: [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 ],
-
-      slide: 1,
-      lorem: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus, ratione eum minus fuga, quasi dicta facilis corporis magnam, suscipit at quo nostrum!'
+      slide: 1
     }
+  },
+  computed: {
+    ...mapGetters({
+      menuOnOff: 'get_menuOnOff'
+    })
+  },
+  watch: {
+    menuOnOff: function (val, oldVal) {
+      if (val) {
+        this.carousel = true
+        this.set_menuOnOff()
+      }
+    }
+  },
+  methods: {
+    ...mapMutations({
+      set_menuOnOff: 'set_menuOnOff'
+    })
   }
 }
 </script>

@@ -4,5 +4,6 @@
 export default {
   registration: 'Registration',
   sigIn: 'Sign',
-  signOut: 'Sign out '
+  signOut: 'Sign out ',
+  menuFood: 'Menu'
 }

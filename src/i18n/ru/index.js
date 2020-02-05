@@ -4,5 +4,6 @@
 export default {
   registration: 'Регистрация',
   sigIn: 'Войти',
-  signOut: 'Выйти'
+  signOut: 'Выйти',
+  menuFood: 'Меню'
 }

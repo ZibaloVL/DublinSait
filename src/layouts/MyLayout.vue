@@ -14,7 +14,10 @@
         <q-toolbar-title>
           Quasar App
         </q-toolbar-title>
-
+        <q-btn
+          :label="$t('menuFood')"
+          flat
+          @click="menuFoodOnOff()" />
         <q-separator v-show="showEn" dark vertical />
         <q-btn v-show="showEn" @click="changeLang('en-us')" stretch flat label="EN"/>
         <q-separator v-show="showRo" dark vertical />
@@ -93,6 +96,7 @@
 </template>
 
 <script>
+import { mapGetters, mapMutations } from 'vuex'
 export default {
   name: 'MyLayout',
 
@@ -104,7 +108,15 @@ export default {
       showRu: true
     }
   },
+  computed: {
+    ...mapGetters({
+      menuFoodOnOf: 'get_menuOnOff'// from module "foodMenu"
+    })
+  },
   methods: {
+    ...mapMutations({
+      menuFoodOnOff: 'set_menuOnOff'
+    }),
     changeLang (locale) {
       this.$i18n.locale = locale
       switch (locale) {

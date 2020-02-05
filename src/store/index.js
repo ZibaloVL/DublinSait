@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import users from './module/users'
 
+import users from './module/users'
+import foodMenu from './module/foodMenu'
 // import example from './module-example'
 
 Vue.use(Vuex)
@@ -18,7 +19,8 @@ Vue.use(Vuex)
 export default function (/* { ssrContext } */) {
   const Store = new Vuex.Store({
     modules: {
-      users
+      users,
+      foodMenu
     },
 
     // enable strict mode (adds overhead!)
