@@ -5,7 +5,8 @@
       :autoplay="4000"
       animated
       infinite
-      height="95vh"
+      height="100vh"
+      class="absolute-top"
     >
       <q-carousel-slide
         v-for="(img, index) in imgsCaruselHorisontal"

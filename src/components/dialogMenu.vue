@@ -12,7 +12,7 @@
         swipeable
         animated
         v-model="slide"
-        control-color="primary"
+        control-color="green-9"
         navigation-icon="radio_button_unchecked"
         navigation
         padding
@@ -22,7 +22,7 @@
           v-for="(img, index) in images"
           :key="index"
           :name="img"
-          class="column no-wrap flex-center "
+          class="column no-wrap flex-center backgroundPage "
         >
           <q-img
               :src="require(`assets/menu/pagesMenuDuble/menuDoblle${img}.jpg`)"

@@ -5,7 +5,9 @@
     <q-header
       class="transparent"
     >
-      <q-toolbar>
+      <q-toolbar
+        style="padding: 10px;"
+      >
         <q-btn
           flat
           dense
@@ -14,12 +16,10 @@
           icon="menu"
           aria-label="Menu"
         />
+        <span>
+          <q-img style="width:128px; height:50px;" src='~assets/logo/LogoDublin128.png'/>
+        </span>
         <q-toolbar-title>
-          <q-avatar
-            size="100px"
-          >
-            <q-img src='~assets/logo/LogoDublin128.png'/>
-          </q-avatar>
         </q-toolbar-title>
         <q-btn
           :label="$t('menuFood')"
