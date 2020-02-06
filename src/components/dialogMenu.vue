@@ -11,6 +11,7 @@
         transition-next="fade"
         swipeable
         animated
+        autoplay="11500"
         v-model="slide"
         control-color="green-9"
         navigation-icon="radio_button_unchecked"

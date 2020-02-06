@@ -2,7 +2,7 @@
   <div>
     <q-carousel
       v-model="slide"
-      :autoplay="4000"
+      :autoplay="5000"
       animated
       infinite
       height="100vh"
