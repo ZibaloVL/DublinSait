@@ -1,8 +1,9 @@
 <template>
-  <q-layout view="lHh Lpr lFf">
+  <q-layout
+    view="lHh Lpr lFf"
+  >
     <q-header
-      elevated
-      style="background:#217866;"
+      class="transparent"
     >
       <q-toolbar>
         <q-btn
@@ -13,9 +14,12 @@
           icon="menu"
           aria-label="Menu"
         />
-
         <q-toolbar-title>
-          Quasar App
+          <q-avatar
+            size="100px"
+          >
+            <q-img src='~assets/logo/LogoDublin128.png'/>
+          </q-avatar>
         </q-toolbar-title>
         <q-btn
           :label="$t('menuFood')"
@@ -93,7 +97,9 @@
       </q-list>
     </q-drawer>
 
-    <q-page-container>
+    <q-page-container
+      class="backgroundPage"
+    >
       <router-view />
     </q-page-container>
   </q-layout>
