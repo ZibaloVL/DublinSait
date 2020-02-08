@@ -1,8 +1,8 @@
 <template>
   <q-layout
-    view="lHh Lpr lFf"
+    view="lHh lpr lFf"
   >
-    <q-img height="100vh" class="absolute-top" src='~assets/background/Background.png'/>
+  <!--class="backgroundPage"-->
     <q-header
       class="transparent"
     >
@@ -39,6 +39,7 @@
 
     <q-drawer
       v-model="leftDrawerOpen"
+      behavior="mobile"
       show-if-above
       bordered
       content-class="bg-grey-2"
