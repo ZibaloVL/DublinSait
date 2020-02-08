@@ -5,8 +5,6 @@ module.exports = function (ctx) {
   return {
     // app boot file (/src/boot)
     // --> boot files are part of "main.js"
-    // embedding all animations
-    animations: 'all',
 
     // https://quasar.dev/quasar-cli/cli-documentation/boot-files
     boot: [
@@ -110,7 +108,7 @@ module.exports = function (ctx) {
 
     // animations: 'all', // --- includes all animations
     // https://quasar.dev/options/animations
-    animations: [],
+    animations: 'all',
 
     // https://quasar.dev/quasar-cli/developing-ssr/configuring-ssr
     ssr: {

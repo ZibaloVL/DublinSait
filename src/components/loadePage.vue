@@ -14,7 +14,9 @@
 // add animation style
 export default {
   data () {
-    return {}
+    return {
+      an: true
+    }
   },
   methods: {
   }
