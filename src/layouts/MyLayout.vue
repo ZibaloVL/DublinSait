@@ -2,6 +2,7 @@
   <q-layout
     view="lHh Lpr lFf"
   >
+    <q-img height="100vh" class="absolute-top" src='~assets/background/Background.png'/>
     <q-header
       class="transparent"
     >
@@ -97,9 +98,7 @@
       </q-list>
     </q-drawer>
 
-    <q-page-container
-      class="backgroundPage"
-    >
+    <q-page-container>
       <router-view />
     </q-page-container>
   </q-layout>
