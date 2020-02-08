@@ -2,21 +2,12 @@
   <q-layout
     class="absolute-center z-max backgroundPage"
   >
-    <q-avatar
-      square
-      size="800px"
+    <q-img
       @click="$emit('clickShow')"
       class="absolute-center"
-    >
-      <q-img src='~assets/background/LogoDublin.png'/>
-    </q-avatar>
-      <!--
-        <q-img
-          class="absolute-top z-top"
-          height="100vh"
-          src='~assets/background/Background.png'
-        />
-      -->
+      src='~assets/background/LogoDublin.png'
+      style="max-width: 50%"
+    />
   </q-layout>
 </template>
 <script>
