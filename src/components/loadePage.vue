@@ -6,7 +6,7 @@
       @click="$emit('clickShow')"
       class="absolute-center"
       src='~assets/background/LogoDublin.png'
-      style="max-width: 50%"
+      style="max-width: 70%"
     />
   </q-layout>
 </template>

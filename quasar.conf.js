@@ -56,7 +56,8 @@ module.exports = function (ctx) {
         'QDialog',
         'QImg',
         'QPageContainer',
-        'QPage'
+        'QPage',
+        'QVideo'
       ],
       directives: [
         'ClosePopup'
