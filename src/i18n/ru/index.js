@@ -6,5 +6,6 @@ export default {
   sigIn: 'Войти',
   signOut: 'Выйти',
   menuFood: 'Меню',
-  location: 'Как нас найти'
+  location: 'Как нас найти',
+  photoTur: 'Фото тур'
 }

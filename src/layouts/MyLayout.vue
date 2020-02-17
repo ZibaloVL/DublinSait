@@ -22,11 +22,10 @@
         </span>
         <q-toolbar-title>
         </q-toolbar-title>
-        <q-btn
-          :label="$t('menuFood')"
-          flat
-          @click="menuFoodOnOff()" />
+<!-- start btn navigation -->
+        <q-btn :label="$t('menuFood')" flat @click="menuFoodOnOff()" />
         <q-btn :label="$t('location')" flat @click="set_mapsOnOff()" />
+        <q-btn :label="$t('photoTur')" flat @click="set_tourOnOff()" />
         <q-separator v-show="showEn" dark vertical />
         <q-btn v-show="showEn" @click="changeLang('en-us')" stretch flat label="EN"/>
         <q-separator v-show="showRo" dark vertical />
@@ -34,6 +33,7 @@
         <q-separator v-show="showRu" dark vertical />
         <q-btn v-show="showRu" @click="changeLang('ru')" stretch flat label="RU"/>
         <q-separator dark vertical />
+<!-- end btn navigation -->
       </q-toolbar>
     </q-header>
 
@@ -121,13 +121,15 @@ export default {
   computed: {
     ...mapGetters({
       menuFoodOnOf: 'get_menuOnOff', // from module "foodMenu"
-      mapsOnOff: 'get_mapsOnOff'// from mapsDialog
+      mapsOnOff: 'get_mapsOnOff', // from mapsDialog
+      tourOnOff: 'get_tourOnOff'// from tourDialog
     })
   },
   methods: {
     ...mapMutations({
       menuFoodOnOff: 'set_menuOnOff',
-      set_mapsOnOff: 'set_mapsOnOff'
+      set_mapsOnOff: 'set_mapsOnOff',
+      set_tourOnOff: 'set_tourOnOff'
 
     }),
     changeLang (locale) {
