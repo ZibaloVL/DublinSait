@@ -11,7 +11,8 @@ export default {
   },
   mutations: {
     set_tourOnOff (state) {
-      state.mapsOnOff = !state.tourOnOff
+      state.tourOnOff = !state.tourOnOff
+    //  console.log('state.mapsOnOff', state.tourOnOff)
     }
   }
 }

@@ -9,6 +9,8 @@
     </transition>
     <dialog-menu />
     <dialog-map />
+    <dialog-tour />
+
   </div>
 </template>
 
@@ -16,6 +18,7 @@
 import MainCarusel from '../components/mainCarusel'
 import DialogMenu from '../components/dialogMenu'
 import DialogMap from '../components/dialogMap'
+import DialogTour from '../components/dialogTour'
 import loadePage from '../components/loadePage'
 export default {
   name: 'PageIndex',
@@ -23,6 +26,7 @@ export default {
     MainCarusel,
     DialogMenu,
     DialogMap,
+    DialogTour,
     loadePage
   },
   data () {

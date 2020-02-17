@@ -122,7 +122,7 @@ export default {
     ...mapGetters({
       menuFoodOnOf: 'get_menuOnOff', // from module "foodMenu"
       mapsOnOff: 'get_mapsOnOff', // from mapsDialog
-      tourOnOff: 'get_tourOnOff'// from tourDialog
+      tourOnOff: 'get_tourOnOff' // from tourDialog
     })
   },
   methods: {
