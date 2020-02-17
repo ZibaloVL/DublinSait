@@ -7,5 +7,6 @@ export default {
   signOut: 'Выйти',
   menuFood: 'Меню',
   location: 'Как нас найти',
-  photoTur: 'Фото тур'
+  photoTur: 'Фото тур',
+  contact: 'Контакты'
 }

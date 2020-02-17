@@ -10,15 +10,18 @@
     <dialog-menu />
     <dialog-map />
     <dialog-tour />
+    <dialog-contact />
   </div>
 </template>
 
 <script>
+import loadePage from '../components/loadePage'
 import MainCarusel from '../components/mainCarusel'
 import DialogMenu from '../components/dialogMenu'
 import DialogMap from '../components/dialogMap'
 import DialogTour from '../components/dialogTour'
-import loadePage from '../components/loadePage'
+import DialogContact from '../components/dialogContact'
+
 export default {
   name: 'PageIndex',
   components: {
@@ -26,6 +29,7 @@ export default {
     DialogMenu,
     DialogMap,
     DialogTour,
+    DialogContact,
     loadePage
   },
   data () {

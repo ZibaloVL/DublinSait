@@ -7,5 +7,6 @@ export default {
   signOut: 'Sign out ',
   menuFood: 'Menu',
   location: 'Location',
-  photoTur: 'Photo tur'
+  photoTur: 'Photo tur',
+  contact: 'Contacts'
 }

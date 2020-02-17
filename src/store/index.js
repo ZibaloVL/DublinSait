@@ -5,6 +5,7 @@ import users from './module/users'
 import foodMenu from './module/foodMenu'
 import mapsDialog from './module/mapsDialog'
 import tourDialog from './module/tourDialog'
+import contactDialog from './module/contactDialog'
 // import example from './module-example'
 
 Vue.use(Vuex)
@@ -24,7 +25,8 @@ export default function (/* { ssrContext } */) {
       users,
       foodMenu,
       mapsDialog,
-      tourDialog
+      tourDialog,
+      contactDialog
     },
 
     // enable strict mode (adds overhead!)

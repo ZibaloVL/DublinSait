@@ -40,6 +40,11 @@
           flat
           @click="set_tourOnOff()"
         />
+        <q-btn
+          :label="$t('contact')"
+          flat
+          @click="set_contactOnOff()"
+        />
         <q-separator
           v-show="showEn"
           dark
@@ -220,14 +225,16 @@ export default {
     ...mapGetters({
       menuFoodOnOf: 'get_menuOnOff', // from module "foodMenu"
       mapsOnOff: 'get_mapsOnOff', // from mapsDialog
-      tourOnOff: 'get_tourOnOff' // from tourDialog
+      tourOnOff: 'get_tourOnOff', // from tourDialog
+      contactOnOff: 'get_contactOnOff' // from contactDialog
     })
   },
   methods: {
     ...mapMutations({
       menuFoodOnOff: 'set_menuOnOff',
       set_mapsOnOff: 'set_mapsOnOff',
-      set_tourOnOff: 'set_tourOnOff'
+      set_tourOnOff: 'set_tourOnOff',
+      set_contactOnOff: 'set_contactOnOff'
 
     }),
     changeLang (locale) {
