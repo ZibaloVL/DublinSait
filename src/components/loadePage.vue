@@ -3,10 +3,10 @@
     class="absolute-center z-max backgroundPage"
   >
     <q-img
-      @click="$emit('clickShow')"
       class="absolute-center"
-      src='~assets/background/LogoDublin.png'
+      src="~assets/background/LogoDublin.png"
       style="max-width: 70%"
+      @click="$emit('clickShow')"
     />
   </q-layout>
 </template>

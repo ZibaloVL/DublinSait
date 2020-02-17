@@ -10,7 +10,6 @@
     <dialog-menu />
     <dialog-map />
     <dialog-tour />
-
   </div>
 </template>
 

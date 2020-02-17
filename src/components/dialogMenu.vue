@@ -7,12 +7,12 @@
       full-height
     >
       <q-carousel
+        v-model="slide"
         transition-prev="fade"
         transition-next="fade"
         swipeable
         animated
         autoplay="11500"
-        v-model="slide"
         control-color="green-9"
         navigation-icon="radio_button_unchecked"
         navigation
@@ -26,10 +26,10 @@
           class="column no-wrap flex-center backgroundPage "
         >
           <q-img
-              :src="require(`assets/menu/pagesMenuDuble/menuDoblle${img}.jpg`)"
-              style="max-width: 1100px; height: auto;"
-              class="shadow-15"
-            />
+            :src="require(`assets/menu/pagesMenuDuble/menuDoblle${img}.jpg`)"
+            style="max-width: 1100px; height: auto;"
+            class="shadow-15"
+          />
         </q-carousel-slide>
       </q-carousel>
     </q-dialog>
