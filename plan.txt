@@ -1,6 +1,14 @@
-поправить dialog menu на закрытие
-раздел контактов
-адаптация
+
+// раздел контактов
+  оформление:
+    -dialog **
+    -page
+    -side bar
+    -footer **
+  варианты:
+   - с сообщением
+   - без сообщения **
+
 signIn in dialog type
 registration in dialog type
 sign out in dialog type

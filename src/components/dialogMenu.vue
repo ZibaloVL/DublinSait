@@ -2,7 +2,7 @@
   <div class="q-pa-md q-gutter-sm">
     <!-- <q-btn label="Carousel" color="primary" @click="carousel = true" /> -->
     <q-dialog
-      v-model="carousel"
+      v-model="icon"
       full-width
       full-height
     >
@@ -12,7 +12,6 @@
         transition-next="fade"
         swipeable
         animated
-        autoplay="11500"
         control-color="green-9"
         navigation-icon="radio_button_unchecked"
         navigation
@@ -25,6 +24,15 @@
           :name="img"
           class="column no-wrap flex-center backgroundPage "
         >
+          <q-btn
+            v-close-popup
+            class="fixed-top-right, absolute-top-right"
+            icon="close"
+            flat
+            round
+            dense
+            color="green-9"
+          />
           <q-img
             :src="require(`assets/menu/pagesMenuDuble/menuDoblle${img}.jpg`)"
             style="max-width: 1100px; height: auto;"
@@ -41,7 +49,7 @@ import { mapGetters, mapMutations } from 'vuex'
 export default {
   data () {
     return {
-      carousel: false,
+      icon: false,
       images: [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 ],
       slide: 1
     }
@@ -54,7 +62,7 @@ export default {
   watch: {
     menuOnOff: function (val, oldVal) {
       if (val) {
-        this.carousel = true
+        this.icon = true
         this.set_menuOnOff()
       }
     }
