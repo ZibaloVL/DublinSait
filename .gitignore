@@ -3,7 +3,6 @@
 node_modules
 
 # key Project
-src/boot/configKeys
 
 # Quasar core related directories
 .quasar
