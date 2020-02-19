@@ -1,8 +1,12 @@
 <template>
   <q-dialog
     v-model="icon"
+    full-width
   >
-    <div class="row item-center">
+    <div
+      class="row content-center justify-center"
+      style="box-shadow: none;"
+    >
       <q-card class="my-card"
         flat
         bordered
@@ -91,6 +95,6 @@ export default {
 </script>
 <style lang="sass" scoped>
 .my-card
-  width: auto;
-  min-width: 500px;
+  width: 100%;
+  max-width: 1000px;
 </style>
