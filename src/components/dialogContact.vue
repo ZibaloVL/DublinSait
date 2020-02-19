@@ -1,58 +1,63 @@
 <template>
-  <div class="q-pa-md q-gutter-sm">
-    <q-dialog
-      v-model="icon"
-    >
-      <q-card>
-        <q-tabs
-          v-model="tab"
-          dense
-          class="text-grey"
-          active-color="primary"
-          indicator-color="primary"
-          align="justify"
-          narrow-indicator
-        >
-          <q-tab
-            name="mails"
-            label="Mails"
+  <q-dialog
+    v-model="icon"
+  >
+    <div class="row item-center">
+      <q-card class="my-card"
+        flat
+        bordered
+      >
+        <q-img
+          src="~assets/img/titul/IMG_2560.jpg"
+          style="width: 100%;"
+        />
+        <q-card-section>
+          <div class="text-h5 q-mt-sm q-mb-xs">
+            Dublin Pub
+          </div>
+          <div class="text-h6 text-grey">
+            <q-icon name="location_on" />
+            {{ $t('adress')}}
+          </div>
+          <div class="text-h6 text-grey">
+            <q-icon name="phone" />
+            +373 671 27 674
+          </div>
+          <div class="text-h6 text-grey">
+            <q-icon name="mail" />
+            dublin_md@mail.ru
+          </div>
+          <div>
+            <i
+              class="fab fa-facebook-square"
+              style="font-size: 1.5rem; color: grey;"
+            ></i>
+          </div>
+        </q-card-section>
+        <q-card-section>
+        </q-card-section>
+        <q-card-actions>
+          <q-space />
+          <q-btn
+            color="grey"
+            round
+            flat
+            dense
+            :icon="expanded ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
+            @click="expanded = !expanded"
           />
-          <q-tab
-            name="alarms"
-            label="Alarms"
-          />
-          <q-tab
-            name="movies"
-            label="Movies"
-          />
-        </q-tabs>
-        <q-separator />
-        <q-tab-panels
-          v-model="tab"
-          animated
-        >
-          <q-tab-panel name="mails">
-            <div class="text-h6">
-              Mails
-            </div>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          </q-tab-panel>
-          <q-tab-panel name="alarms">
-            <div class="text-h6">
-              Alarms
-            </div>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          </q-tab-panel>
-          <q-tab-panel name="movies">
-            <div class="text-h6">
-              Movies
-            </div>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          </q-tab-panel>
-        </q-tab-panels>
+        </q-card-actions>
+        <q-slide-transition>
+          <div v-show="expanded">
+            <q-separator />
+            <q-card-section class="text-subitle2">
+              {{ lorem }}
+            </q-card-section>
+          </div>
+        </q-slide-transition>
       </q-card>
-    </q-dialog>
-  </div>
+    </div>
+  </q-dialog>
 </template>
 <script>
 import { mapGetters, mapMutations } from 'vuex'
@@ -60,7 +65,8 @@ export default {
   data () {
     return {
       icon: false,
-      tab: 'mails'
+      expanded: false,
+      lorem: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
     }
   },
   computed: {
@@ -83,3 +89,8 @@ export default {
   }
 }
 </script>
+<style lang="sass" scoped>
+.my-card
+  width: auto;
+  min-width: 500px;
+</style>

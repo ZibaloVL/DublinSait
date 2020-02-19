@@ -8,5 +8,6 @@ export default {
   menuFood: 'Меню',
   location: 'Как нас найти',
   photoTur: 'Фото тур',
-  contact: 'Контакты'
+  contact: 'Контакты',
+  adress: 'ул Болгарская,27 Кишинёв'
 }

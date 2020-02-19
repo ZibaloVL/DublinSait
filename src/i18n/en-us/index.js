@@ -8,5 +8,6 @@ export default {
   menuFood: 'Menu',
   location: 'Location',
   photoTur: 'Photo tur',
-  contact: 'Contacts'
+  contact: 'Contacts',
+  adress: 'str. Bulgara, 27 Chishinau'
 }
