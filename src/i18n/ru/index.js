@@ -9,5 +9,5 @@ export default {
   location: 'Как нас найти',
   photoTur: 'Фото тур',
   contact: 'Контакты',
-  adress: 'ул Болгарская,27 Кишинёв'
+  address: 'ул Болгарская,27 Кишинёв'
 }

@@ -16,21 +16,39 @@
           style="width: 100%;"
         />
         <q-card-section>
-          <div class="text-h5 q-mt-sm q-mb-xs">
-            Dublin Pub
-          </div>
-          <div class="text-h6 text-grey">
-            <q-icon name="location_on" />
-            {{ $t('adress')}}
-          </div>
-          <div class="text-h6 text-grey">
-            <q-icon name="phone" />
-            +373 671 27 674
-          </div>
-          <div class="text-h6 text-grey">
-            <q-icon name="mail" />
-            dublin_md@mail.ru
-          </div>
+          <q-tab-panels v-model="tab" animated>
+            <q-tab-panel name="address">
+              <div><q-icon name="location_on"/></div>
+              <div class="text-h6">{{ $t('address') }}</div>
+              <div class="text-h6 text-grey">
+                <q-icon name="phone" />
+                +373 671 27 674
+              </div>
+            </q-tab-panel>
+            <q-tab-panel name="mails">
+              <div><q-icon name="mail" /></div>
+              <div class="text-h6 text-grey">dublin_md@mail.ru</div>
+            </q-tab-panel>
+            <q-tab-panel name="alarm">
+              <div><q-icon name="alarm" /></div>
+              <div class="text-h6">часы работы</div>
+            </q-tab-panel>
+          </q-tab-panels>
+          <q-separator />
+          <q-tabs
+            v-model="tab"
+            dense
+            class="bg-grey-3"
+            align="justify"
+            narrow-indicator
+          >
+            <q-tab name="address" icon="location_on" />
+            <q-tab name="mails" icon="mail" />
+            <q-tab name="alarm" icon="alarm" />
+          </q-tabs>
+        </q-card-section>
+        <!--
+        <q-card-section>
           <div>
             <i
               class="fab fa-facebook-square"
@@ -59,6 +77,7 @@
             </q-card-section>
           </div>
         </q-slide-transition>
+        -->
       </q-card>
     </div>
   </q-dialog>
@@ -70,7 +89,8 @@ export default {
     return {
       icon: false,
       expanded: false,
-      lorem: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+      lorem: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+      tab: 'mails'
     }
   },
   computed: {

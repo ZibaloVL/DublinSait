@@ -9,5 +9,5 @@ export default {
   location: 'Location',
   photoTur: 'Photo tur',
   contact: 'Contacts',
-  adress: 'str. Bulgara, 27 Chishinau'
+  address: 'str. Bulgara, 27 Chishinau'
 }
