@@ -8,7 +8,8 @@
       class="row content-center justify-center"
       style="box-shadow: none;"
     >
-      <q-card class="my-card styleCardsContact"
+      <q-card
+        class="my-card styleCardsContact"
         flat
         bordered
       >
@@ -62,16 +63,12 @@
               <div
                 :class="tabPanelClass"
               >
+                {{ $t('alarm.Sanday') }}
               </div>
               <div
                 :class="tabPanelClass"
               >
-                {{ $t('alarm.Sanday')}}
-              </div>
-              <div
-                :class="tabPanelClass"
-              >
-                {{ $t('alarm.MondaySartuday')}}
+                {{ $t('alarm.MondaySartuday') }}
               </div>
             </q-tab-panel>
             <q-tab-panel

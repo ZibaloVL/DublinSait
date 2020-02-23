@@ -14,3 +14,8 @@ registration in dialog type
 sign out in dialog type
 
 ADAPTAITION!!!!
+
+1 сделать футер с соцсетями  и кишинев
+3 заменить страницу в меню
+4 убрать кнопку боковой панели
+2 выложить на хостинг
