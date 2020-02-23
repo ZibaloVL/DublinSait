@@ -10,6 +10,7 @@
         style="padding: 10px;"
       >
         <q-btn
+          v-show="false"
           flat
           dense
           round
@@ -205,6 +206,32 @@
     <q-page-container>
       <router-view />
     </q-page-container>
+    <q-footer
+      class="transparent"
+    >
+      <q-toolbar>
+        <q-toolbar-title>
+          <q-btn
+            type="a"
+            href="https://www.facebook.com/RestaurantDublin/"
+            target="_blank"
+            icon="fab fa-facebook-square"
+          />
+          <q-btn
+            type="a"
+            href="https://m.me/RestaurantDublin?fbclid=IwAR2sf_l8P4EVxLzHRq35qVMA_YIgeOZbGS9nBlwXtnrWcyoW272PYMYlAz4"
+            target="_blank"
+            icon="fab fa-facebook-messenger"
+          />
+          <q-btn
+            type="a"
+            href="https://m.me/RestaurantDublin?fbclid=IwAR2sf_l8P4EVxLzHRq35qVMA_YIgeOZbGS9nBlwXtnrWcyoW272PYMYlAz4"
+            target="_blank"
+            icon="fab fa-instagram"
+          />
+        </q-toolbar-title>
+      </q-toolbar>
+    </q-footer>
   </q-layout>
 </template>
 
