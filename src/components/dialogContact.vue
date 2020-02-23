@@ -2,12 +2,13 @@
   <q-dialog
     v-model="icon"
     full-width
+    :content-style="{ color: '#ffffff'}"
   >
     <div
       class="row content-center justify-center"
       style="box-shadow: none;"
     >
-      <q-card class="my-card"
+      <q-card class="my-card styleCardsContact"
         flat
         bordered
       >
@@ -18,7 +19,11 @@
         <q-card-section
           style="padding: 5px 0px 0px 0px"
         >
-          <q-tab-panels v-model="tab" animated>
+          <q-tab-panels
+            v-model="tab"
+            animated
+            class="styleCardsContact"
+          >
             <q-tab-panel
               name="address"
             >
@@ -86,25 +91,6 @@
                 +373 691 27 674
               </div>
             </q-tab-panel>
-            <!--
-            <q-tab-panel
-              name="facebook"
-            >
-              <div
-                :class="tabPanelClass"
-              >
-                <q-icon
-                  name="ion-logo-facebook"
-                  :class="tabPanelClassM"
-                />
-              </div>
-              <div
-                :class="tabPanelClass"
-              >
-                dublin_md@mail.ru
-              </div>
-            </q-tab-panel>
-            -->
           </q-tab-panels>
           <q-separator />
           <q-tabs
@@ -114,46 +100,31 @@
             align="justify"
             narrow-indicator
           >
-            <q-tab name="address" icon="location_on" />
-            <q-tab name="mails" icon="mail" />
-            <q-tab name="alarm" icon="alarm" />
-            <q-tab name="phone" icon="phone" />
+            <q-tab
+              name="address"
+              class="styleCardsContact"
+              icon="location_on"
+            />
+            <q-tab
+              name="alarm"
+              class="styleCardsContact"
+              icon="alarm"
+            />
+            <q-tab
+              name="phone"
+              class="styleCardsContact"
+              icon="phone"
+            />
+            <q-tab
+              name="mails"
+              class="styleCardsContact"
+              icon="mail"
+            />
             <!--
             <q-tab name="facebook" icon="ion-logo-facebook" />
             -->
           </q-tabs>
         </q-card-section>
-        <!--
-        <q-card-section>
-          <div>
-            <i
-              class="fab fa-facebook-square"
-              style="font-size: 1.5rem; color: grey;"
-            ></i>
-          </div>
-        </q-card-section>
-        <q-card-section>
-        </q-card-section>
-        <q-card-actions>
-          <q-space />
-          <q-btn
-            color="grey"
-            round
-            flat
-            dense
-            :icon="expanded ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
-            @click="expanded = !expanded"
-          />
-        </q-card-actions>
-        <q-slide-transition>
-          <div v-show="expanded">
-            <q-separator />
-            <q-card-section class="text-subitle2">
-              {{ lorem }}
-            </q-card-section>
-          </div>
-        </q-slide-transition>
-        -->
       </q-card>
     </div>
   </q-dialog>
@@ -166,7 +137,7 @@ export default {
       icon: false,
       expanded: false,
       lorem: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-      tab: 'mails',
+      tab: 'address',
       tabPanelClass: 'text-h5 text-center',
       tabPanelClassM: 'text-h4 text-center'
     }
@@ -191,8 +162,12 @@ export default {
   }
 }
 </script>
-<style lang="sass" scoped>
-.my-card
+<style lang="scss" scoped>
+.my-card {
   width: 100%;
   max-width: 1000px;
+};
+.styleCardsContact {
+  background-color: $green-10;
+}
 </style>
