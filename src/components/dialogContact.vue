@@ -17,21 +17,38 @@
         />
         <q-card-section>
           <q-tab-panels v-model="tab" animated>
-            <q-tab-panel name="address">
-              <div><q-icon name="location_on"/></div>
-              <div class="text-h6">{{ $t('address') }}</div>
-              <div class="text-h6 text-grey">
+            <q-tab-panel
+              name="address"
+            >
+              <div :class="tabPanelClass">
+                <q-icon name="location_on"/>
+              </div>
+              <div :class="tabPanelClass">
+                {{ $t('address') }}
+              </div>
+              <div :class="tabPanelClass">
                 <q-icon name="phone" />
                 +373 671 27 674
               </div>
             </q-tab-panel>
             <q-tab-panel name="mails">
-              <div><q-icon name="mail" /></div>
-              <div class="text-h6 text-grey">dublin_md@mail.ru</div>
+              <div :class="tabPanelClass">
+                <q-icon name="mail" />
+              </div>
+              <div :class="tabPanelClass">
+                dublin_md@mail.ru
+              </div>
             </q-tab-panel>
             <q-tab-panel name="alarm">
-              <div><q-icon name="alarm" /></div>
-              <div class="text-h6">часы работы</div>
+              <div :class="tabPanelClass">
+                <q-icon name="alarm" />
+              </div>
+              <div :class="tabPanelClass">
+                {{ $t('alarm.Sanday')}}
+              </div>
+              <div :class="tabPanelClass">
+                {{ $t('alarm.MondaySartuday')}}
+              </div>
             </q-tab-panel>
           </q-tab-panels>
           <q-separator />
@@ -90,7 +107,8 @@ export default {
       icon: false,
       expanded: false,
       lorem: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-      tab: 'mails'
+      tab: 'mails',
+      tabPanelClass: 'text-h5 text-center'
     }
   },
   computed: {

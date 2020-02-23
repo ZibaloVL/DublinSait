@@ -9,5 +9,9 @@ export default {
   location: 'Location',
   photoTur: 'Photo tur',
   contact: 'Contacts',
-  address: 'str. Bulgara, 27 Chishinau'
+  address: 'str. Bulgara, 27 Chishinau',
+  alarm: {
+    Sanday: 'Sanday: 13-23',
+    MondaySartuday: 'Monday-Sartuday: 12-23'
+  }
 }
