@@ -15,41 +15,96 @@
           src="~assets/img/titul/IMG_2560.jpg"
           style="width: 100%;"
         />
-        <q-card-section>
+        <q-card-section
+          style="padding: 5px 0px 0px 0px"
+        >
           <q-tab-panels v-model="tab" animated>
             <q-tab-panel
               name="address"
             >
               <div :class="tabPanelClass">
-                <q-icon name="location_on"/>
+                <q-icon
+                  name="location_on"
+                  :class="tabPanelClassM"
+                />
               </div>
-              <div :class="tabPanelClass">
+              <div
+                :class="tabPanelClass"
+              >
                 {{ $t('address') }}
               </div>
-              <div :class="tabPanelClass">
-                <q-icon name="phone" />
-                +373 671 27 674
-              </div>
             </q-tab-panel>
-            <q-tab-panel name="mails">
-              <div :class="tabPanelClass">
-                <q-icon name="mail" />
+            <q-tab-panel
+              name="mails"
+            >
+              <div
+                :class="tabPanelClass"
+              >
+                <q-icon
+                  name="mail"
+                  :class="tabPanelClassM"
+                />
               </div>
-              <div :class="tabPanelClass">
+              <div
+                :class="tabPanelClass"
+              >
                 dublin_md@mail.ru
               </div>
             </q-tab-panel>
-            <q-tab-panel name="alarm">
-              <div :class="tabPanelClass">
-                <q-icon name="alarm" />
+            <q-tab-panel
+              name="alarm"
+            >
+              <div
+                :class="tabPanelClass"
+              >
               </div>
-              <div :class="tabPanelClass">
+              <div
+                :class="tabPanelClass"
+              >
                 {{ $t('alarm.Sanday')}}
               </div>
-              <div :class="tabPanelClass">
+              <div
+                :class="tabPanelClass"
+              >
                 {{ $t('alarm.MondaySartuday')}}
               </div>
             </q-tab-panel>
+            <q-tab-panel
+              name="phone"
+            >
+              <div
+                :class="tabPanelClass"
+              >
+                <q-icon
+                  name="phone"
+                  :class="tabPanelClassM"
+                />
+              </div>
+              <div
+                :class="tabPanelClass"
+              >
+                +373 691 27 674
+              </div>
+            </q-tab-panel>
+            <!--
+            <q-tab-panel
+              name="facebook"
+            >
+              <div
+                :class="tabPanelClass"
+              >
+                <q-icon
+                  name="ion-logo-facebook"
+                  :class="tabPanelClassM"
+                />
+              </div>
+              <div
+                :class="tabPanelClass"
+              >
+                dublin_md@mail.ru
+              </div>
+            </q-tab-panel>
+            -->
           </q-tab-panels>
           <q-separator />
           <q-tabs
@@ -62,6 +117,10 @@
             <q-tab name="address" icon="location_on" />
             <q-tab name="mails" icon="mail" />
             <q-tab name="alarm" icon="alarm" />
+            <q-tab name="phone" icon="phone" />
+            <!--
+            <q-tab name="facebook" icon="ion-logo-facebook" />
+            -->
           </q-tabs>
         </q-card-section>
         <!--
@@ -108,7 +167,8 @@ export default {
       expanded: false,
       lorem: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
       tab: 'mails',
-      tabPanelClass: 'text-h5 text-center'
+      tabPanelClass: 'text-h5 text-center',
+      tabPanelClassM: 'text-h4 text-center'
     }
   },
   computed: {
