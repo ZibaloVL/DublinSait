@@ -1,8 +1,10 @@
 <template>
   <div>
-    <transition name="bg_tran">
+    <transition
+      name="bg_tran"
+    >
       <loade-page
-        v-if="show"
+        v-if="sla"
         @clickShow="loadPageShow()"
       />
       <main-carusel v-else />
@@ -34,13 +36,17 @@ export default {
   },
   data () {
     return {
+      sla: true,
       show: true
     }
+  },
+  created () {
+    setTimeout(() => this.loadPageShow(), 3000)
   },
   methods: {
     loadPageShow () {
       console.log('loadPageShow')
-      this.show = !this.show
+      this.sla = !this.sla
     }
   }
 }
