@@ -1,40 +1,41 @@
 <template>
   <div class="backgroundMobile">
     <q-layout>
-      <div>ffff</div>
+      <div
+        class="row justify-center align-end wrap"
+        style="height: 100vh;"
+      >
+        <div
+          class="col-12"
+          style="text-align: center"
+        >
+          <q-img
+            src="~assets/logo/LogoDublin800.png"
+            style="width: 80%; margin: 100px 0 30px 0;"
+          />
+        </div>
+        <div class="col-10">
+          <div class="buttomDivMobile">
+            <q-btn class="glossy btnMenuMobile" rounded  :label="$t('menuFood')" />
+          </div>
+          <div class="buttomDivMobile">
+            <q-btn class="glossy btnMenuMobile" rounded  :label="$t('location')" />
+          </div>
+          <div class="buttomDivMobile">
+            <q-btn class="glossy btnMenuMobile" rounded  :label="$t('photoTur')" />
+          </div>
+          <div class="buttomDivMobile">
+            <q-btn class="glossy btnMenuMobile" rounded  :label="$t('contact')" />
+          </div>
+        </div>
+      </div>
     </q-layout>
-  <!--
-  <q-img
-      class="absolute"
-      src="~assets/img/mobile/background/IMG_2592.jpg"
-      style="height: 100vh;"
-    />
-    <q-carousel
-      v-model="slide"
-      :autoplay="5000"
-      animated
-      infinite
-      height="100vh"
-      class="absolute-top"
-    >
-      <q-carousel-slide
-        v-for="(img, index) in imgsCaruselHorisontal"
-        :key="index"
-        :name="img"
-        :img-src="require(`assets/img/slaid/hor/${img}.jpg`)"
-      />
-    </q-carousel>
-    -->
   </div>
 </template>
 <script>
 export default {
   data () {
     return {
-      slide: 1,
-      imgsCaruselHorisontal: [
-        1, 2, 3, 4, 5, 6, 7, 8, 9
-      ]
     }
   }
 }
@@ -43,4 +44,13 @@ export default {
   .backgroundMobile {
     background: url('../assets/img/mobile/background/IMG_2592.jpg')
   };
+  .buttomDivMobile {
+    color: #ffffff;
+    text-align: center;
+    margin-top: 20px;
+  }
+  .btnMenuMobile {
+    background: rgba(42,123,107, 0.9);
+    width: 70%;
+  }
 </style>
