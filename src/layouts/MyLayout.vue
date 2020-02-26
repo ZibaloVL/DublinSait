@@ -3,8 +3,9 @@
     view="lHh lpr lFf"
   >
     <!--class="backgroundPage"-->
+    <!-- change  class desktop-only -->
     <q-header
-      class="transparent"
+      class="transparent desktop-only"
     >
       <q-toolbar
         style="padding: 10px;"

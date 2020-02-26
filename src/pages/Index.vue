@@ -5,10 +5,17 @@
     >
       <loade-page
         v-if="sla"
+        class="desktop-only"
         @clickShow="loadPageShow()"
       />
-      <main-carusel v-else />
+      <main-carusel
+        v-else
+        class="desktop-only"
+      />
     </transition>
+    <load-page-mobile
+      class="mobile-only"
+    />
     <dialog-menu />
     <dialog-map />
     <dialog-tour />
@@ -18,6 +25,7 @@
 
 <script>
 import loadePage from '../components/loadePage'
+import loadPageMobile from '../components/loadPageMobile'
 import MainCarusel from '../components/mainCarusel'
 import DialogMenu from '../components/dialogMenu'
 import DialogMap from '../components/dialogMap'
@@ -32,7 +40,8 @@ export default {
     DialogMap,
     DialogTour,
     DialogContact,
-    loadePage
+    loadePage,
+    loadPageMobile
   },
   data () {
     return {
