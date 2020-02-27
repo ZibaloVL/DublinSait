@@ -11,7 +11,7 @@
         >
           <q-img
             src="~assets/logo/LogoDublin800.png"
-            style="width: 80%; margin: 100px 0 30px 0;"
+            style="width: 80%; margin: 70px 0 30px 0;"
           />
         </div>
         <div class="col-10">
