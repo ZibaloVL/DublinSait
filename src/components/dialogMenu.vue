@@ -1,5 +1,5 @@
 <template>
-  <div class="q-pa-md q-gutter-sm">
+  <div>
     <!-- <q-btn label="Carousel" color="primary" @click="carousel = true" /> -->
     <q-dialog
       v-model="icon"

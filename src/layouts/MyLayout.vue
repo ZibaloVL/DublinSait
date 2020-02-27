@@ -1,6 +1,6 @@
 <template>
   <q-layout
-    view="lHh lpr lFf"
+    view="lHh lpr lff"
   >
     <!--class="backgroundPage"-->
     <!-- change  class desktop-only -->

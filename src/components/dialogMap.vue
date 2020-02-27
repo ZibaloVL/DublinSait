@@ -1,5 +1,7 @@
 <template>
-  <div class="q-pa-md q-gutter-sm">
+  <div
+    id="dialogMap"
+  >
     <q-dialog
       v-model="icon"
       full-width

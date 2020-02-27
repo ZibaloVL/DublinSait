@@ -1,5 +1,6 @@
 <template>
   <div
+    id="sign"
     class="q-pa-md row justify-center align-center"
   >
     <q-card
