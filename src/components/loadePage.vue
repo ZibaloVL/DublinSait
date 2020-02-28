@@ -4,7 +4,7 @@
   >
     <q-img
       class="absolute-center"
-      src="~assets/logo_Dublin_green_2px.svg"
+      src="~assets/background/LogoDublin.png"
       style="max-width: 70%"
       @click="$emit('clickShow')"
     />
