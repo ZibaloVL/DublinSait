@@ -55,7 +55,7 @@ export default {
   methods: {
     loadPageShow () {
       console.log('loadPageShow')
-      this.sla = !this.sla
+      this.sla = false
     }
   }
 }

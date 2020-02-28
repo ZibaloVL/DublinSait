@@ -10,11 +10,11 @@
         v-model="slide"
         transition-prev="fade"
         transition-next="fade"
+        arrows
         swipeable
         animated
         control-color="green-9"
         navigation-icon="radio_button_unchecked"
-        navigation
         padding
         class="bg-white shadow-1 rounded-borders "
       >
@@ -22,7 +22,7 @@
           v-for="(img, index) in images"
           :key="index"
           :name="img"
-          class="column no-wrap flex-center"
+          class="flex-center column no-wrap"
         >
           <q-btn
             v-close-popup
@@ -33,11 +33,14 @@
             dense
             color="green-9"
           />
-          <q-img
-            :src="require(`assets/menu/pagesMenuDuble/menuDoblle${img}.jpg`)"
-            style="max-width: 1100px; height: auto;"
-            class="shadow-15"
-          />
+          <div class="row fit justify-center items-center q-gutter-xs q-col-gutter no-wrap">
+            <q-img
+              :src="require(`assets/menu/pagesMenuDuble/menuDoblle${img}.jpg`)"
+              class="shadow-15"
+              style="height: auto; max-width: 1000px; overflow: hidden;"
+            />
+          </div>
+          <!--style="max-width: 1100px; height: auto;"-->
         </q-carousel-slide>
       </q-carousel>
     </q-dialog>
