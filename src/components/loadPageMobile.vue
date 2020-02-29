@@ -2,6 +2,49 @@
   <div class="backgroundMobile">
     <q-layout>
       <div
+        class=" absolute row no-wrap justify-center"
+        style="width:100%; margin-top: 10px;"
+      >
+        <q-btn
+          type="a"
+          href="https://www.facebook.com/RestaurantDublin/"
+          target="_blank"
+          class="col-4"
+          unelevated
+        >
+          <q-img
+            src="~assets/logo/social/logoFacebook.svg"
+            style="width:30px;"
+          />
+        </q-btn>
+        <q-btn
+          type="a"
+          href="https://m.me/RestaurantDublin?fbclid=IwAR2sf_l8P4EVxLzHRq35qVMA_YIgeOZbGS9nBlwXtnrWcyoW272PYMYlAz4"
+          target="_blank"
+          icon="fab fa-facebook-messenger"
+          class="col-4"
+          unelevated
+        >
+          <q-img
+            src="~assets/logo/social/logoMessanger.svg"
+            style="width:30px;"
+          />
+        </q-btn>
+        <q-btn
+          type="a"
+          href="https://instagram.com/dublin_md?igshid=eivv5n5o66l"
+          target="_blank"
+          icon="fab fa-instagram"
+          class="col-4"
+          unelevated
+        >
+          <q-img
+            src="~assets/logo/social/logoInstagram.svg"
+            style="width:30px;"
+          />
+        </q-btn>
+      </div>
+      <div
         class="row justify-center align-end wrap"
         style="height: 100vh;"
       >
@@ -36,7 +79,7 @@
               class="glossy btnMenuMobile"
               rounded
               :label="$t('photoTur')"
-               @click="set_tourOnOff()"
+              @click="set_tourOnOff()"
             />
           </div>
           <div class="buttomDivMobile">

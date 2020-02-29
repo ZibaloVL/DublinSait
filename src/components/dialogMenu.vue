@@ -57,10 +57,10 @@
           color="white"
         />
         <div
-        v-for="(img, index) in imagesMobile"
-        :key="index"
-        :name="img"
-        class="col-12"
+          v-for="(img, index) in imagesMobile"
+          :key="index"
+          :name="img"
+          class="col-12"
         >
           <q-img
             :src="require(`assets/menu/pagesMenuMobile/menuMobile${img}.jpg`)"
@@ -68,46 +68,6 @@
           />
         </div>
       </div>
-      <!--end dialog desktop-->
-      <!--start dialog mobile
-      <q-carousel
-        v-model="slide"
-        vertical
-        transition-prev="slide-down"
-        transition-next="slide-up"
-        swipeable
-        arrows
-        animated
-        control-color="green-9"
-        navigation-icon="radio_button_unchecked"
-        padding
-        class="bg-white shadow-1 rounded-borders mobile-only"
-      >
-        <q-carousel-slide
-          v-for="(img, index) in imagesMobile"
-          :key="index"
-          :name="img"
-          class="flex-center column no-wrap"
-        >
-          <q-btn
-            v-close-popup
-            class="fixed-top-right, absolute-top-right"
-            icon="close"
-            flat
-            round
-            dense
-            color="green-9"
-          />
-          <div class="row fit justify-center items-center q-gutter-xs q-col-gutter no-wrap">
-            <q-img
-              :src="require(`assets/menu/pagesMenuMobile/menuMobile${img}.jpg`)"
-              class="shadow-15"
-              style="height: auto; max-width: 1000px; overflow: hidden;"
-            />
-          </div>
-        </q-carousel-slide>
-      </q-carousel>
-      end dialog mobile-->
     </q-dialog>
   </div>
 </template>

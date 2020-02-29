@@ -208,7 +208,7 @@
       <router-view />
     </q-page-container>
     <q-footer
-      class="transparent"
+      class="transparent desktop-only"
     >
       <q-toolbar class="row justify-around justify-sm-start">
         <q-btn
