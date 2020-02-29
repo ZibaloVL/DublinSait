@@ -1,23 +1,23 @@
 <template>
   <div>
-    <!--start dialog desktop-->
     <q-dialog
       v-model="icon"
       full-width
       full-height
-      class="desktop-only"
     >
+      <!--start dialog desktop-->
       <q-carousel
         v-model="slide"
         transition-prev="fade"
         transition-next="fade"
+        infinite
         arrows
         swipeable
         animated
         control-color="green-9"
         navigation-icon="radio_button_unchecked"
         padding
-        class="bg-white shadow-1 rounded-borders "
+        class="bg-white shadow-1 rounded-borders desktop-only"
       >
         <q-carousel-slide
           v-for="(img, index) in images"
@@ -44,26 +44,44 @@
           <!--style="max-width: 1100px; height: auto;"-->
         </q-carousel-slide>
       </q-carousel>
-    </q-dialog>
-    <!--end dialog desktop-->
-    <!--start dialog mobile-->
-    <q-dialog
-      v-model="icon"
-      full-width
-      full-height
-      class="mobile-only"
-    >
+      <div
+        class="row mobile-only q-gutter-sm"
+      >
+        <q-btn
+          v-close-popup
+          class="fixed-top-right, absolute-top-right"
+          icon="close"
+          flat
+          round
+          dense
+          color="white"
+        />
+        <div
+        v-for="(img, index) in imagesMobile"
+        :key="index"
+        :name="img"
+        class="col-12"
+        >
+          <q-img
+            :src="require(`assets/menu/pagesMenuMobile/menuMobile${img}.jpg`)"
+            class="shadow-15"
+          />
+        </div>
+      </div>
+      <!--end dialog desktop-->
+      <!--start dialog mobile
       <q-carousel
         v-model="slide"
-        transition-prev="fade"
-        transition-next="fade"
-        arrows
+        vertical
+        transition-prev="slide-down"
+        transition-next="slide-up"
         swipeable
+        arrows
         animated
         control-color="green-9"
         navigation-icon="radio_button_unchecked"
         padding
-        class="bg-white shadow-1 rounded-borders "
+        class="bg-white shadow-1 rounded-borders mobile-only"
       >
         <q-carousel-slide
           v-for="(img, index) in imagesMobile"
@@ -89,8 +107,8 @@
           </div>
         </q-carousel-slide>
       </q-carousel>
+      end dialog mobile-->
     </q-dialog>
-    <!--end dialog mobile-->
   </div>
 </template>
 

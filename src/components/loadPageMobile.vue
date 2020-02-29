@@ -105,6 +105,10 @@ export default {
 <style lang="scss" scoped>
   .backgroundMobile {
     background: url('../assets/img/mobile/background/IMG_2592.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
     margin-bottom: -50px;
   };
   .buttomDivMobile {
