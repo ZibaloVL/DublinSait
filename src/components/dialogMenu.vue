@@ -2,8 +2,7 @@
   <div>
     <q-dialog
       v-model="icon"
-      full-width
-      full-height
+      maximized
     >
       <!--start dialog desktop-->
       <q-carousel

@@ -50,7 +50,7 @@ export default {
     }
   },
   created () {
-    setTimeout(() => this.loadPageShow(), 10000)
+    setTimeout(() => this.loadPageShow(), 1000)
   },
   methods: {
     loadPageShow () {

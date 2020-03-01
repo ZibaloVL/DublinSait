@@ -210,25 +210,46 @@
     <q-footer
       class="transparent desktop-only"
     >
-      <q-toolbar class="row justify-around justify-sm-start">
-        <q-btn
-          type="a"
-          href="https://www.facebook.com/RestaurantDublin/"
-          target="_blank"
-          icon="fab fa-facebook-square"
-        />
-        <q-btn
-          type="a"
-          href="https://m.me/RestaurantDublin?fbclid=IwAR2sf_l8P4EVxLzHRq35qVMA_YIgeOZbGS9nBlwXtnrWcyoW272PYMYlAz4"
-          target="_blank"
-          icon="fab fa-facebook-messenger"
-        />
-        <q-btn
-          type="a"
-          href="https://www.instagram.com/dublin_md/?igshid=eivv5n5o66l"
-          target="_blank"
-          icon="fab fa-instagram"
-        />
+      <q-toolbar class="row justify-start">
+        <div class="col-3">
+          <q-btn
+            size="xs"
+            type="a"
+            href="https://www.facebook.com/RestaurantDublin/"
+            target="_blank"
+            class="col-1"
+            unelevated
+          >
+            <q-img
+              src="~assets/logo/social/logoFacebook.svg"
+              style="width:30px;"
+            />
+          </q-btn>
+          <q-btn
+            type="a"
+            href="https://m.me/RestaurantDublin?fbclid=IwAR2sf_l8P4EVxLzHRq35qVMA_YIgeOZbGS9nBlwXtnrWcyoW272PYMYlAz4"
+            target="_blank"
+            class="col-1"
+            unelevated
+          >
+            <q-img
+              src="~assets/logo/social/logoMessanger.svg"
+              style="width:30px;"
+            />
+          </q-btn>
+          <q-btn
+            type="a"
+            href="https://instagram.com/dublin_md?igshid=eivv5n5o66l"
+            target="_blank"
+            class="col-1"
+            unelevated
+          >
+            <q-img
+              src="~assets/logo/social/logoInstagram.svg"
+              style="width:30px;"
+            />
+          </q-btn>
+        </div>
       </q-toolbar>
     </q-footer>
   </q-layout>
