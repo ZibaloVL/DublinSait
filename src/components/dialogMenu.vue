@@ -46,17 +46,21 @@
       <div
         class="row mobile-only q-gutter-sm"
       >
-        <q-btn
-          v-close-popup
-          class="fixed-top-right, absolute-top-right"
-          icon="close"
-          flat
-          round
-          dense
-          color="green-9"
-          size="sm"
-          style="z-index:100; background:rgba(255,255,255,0.2); margin:10px;"
-        />
+        <q-header
+        class="row justify-end"
+        style="background:rgba(255,255,255,0); absolute-top fixed-top"
+        >
+          <q-btn
+            v-close-popup
+            icon="close"
+            flat
+            round
+            dense
+            color="green-9"
+            size="sm"
+            style="background:rgba(255,255,255,0.2); margin:15px 20px;"
+          />
+        </q-header>
         <div
           v-for="(img, index) in imagesMobile"
           :key="index"

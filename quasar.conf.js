@@ -47,6 +47,7 @@ module.exports = function (ctx) {
 
       components: [
         'QForm',
+        'QBar',
         'QCard',
         'QCardSection',
         'QCardActions',
