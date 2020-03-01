@@ -50,6 +50,7 @@ export default {
     }
   },
   created () {
+    console.log("$_SERVER['window.navigator.language']", window.navigator.language)
     setTimeout(() => this.loadPageShow(), 1000)
   },
   methods: {

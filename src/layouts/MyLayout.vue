@@ -269,6 +269,13 @@ export default {
       showRu: true
     }
   },
+  created () {
+    if (window.navigator.language === 'ru-RU') {
+      this.$i18n.locale = 'ru'
+    } else if (window.navigator.language === 'ro-RO') {
+      this.$i18n.locale = 'ro'
+    }
+  },
   computed: {
     ...mapGetters({
       menuFoodOnOf: 'get_menuOnOff', // from module "foodMenu"
