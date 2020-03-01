@@ -225,7 +225,7 @@
         />
         <q-btn
           type="a"
-          href="https://m.me/RestaurantDublin?fbclid=IwAR2sf_l8P4EVxLzHRq35qVMA_YIgeOZbGS9nBlwXtnrWcyoW272PYMYlAz4"
+          href="https://www.instagram.com/dublin_md/?igshid=eivv5n5o66l"
           target="_blank"
           icon="fab fa-instagram"
         />

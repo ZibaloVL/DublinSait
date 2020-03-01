@@ -21,7 +21,6 @@
           type="a"
           href="https://m.me/RestaurantDublin?fbclid=IwAR2sf_l8P4EVxLzHRq35qVMA_YIgeOZbGS9nBlwXtnrWcyoW272PYMYlAz4"
           target="_blank"
-          icon="fab fa-facebook-messenger"
           class="col-4"
           unelevated
         >
@@ -34,7 +33,6 @@
           type="a"
           href="https://instagram.com/dublin_md?igshid=eivv5n5o66l"
           target="_blank"
-          icon="fab fa-instagram"
           class="col-4"
           unelevated
         >
@@ -149,10 +147,8 @@ export default {
   .backgroundMobile {
     background: url('../assets/img/mobile/background/IMG_2592.jpg');
     background-repeat: no-repeat;
-    background-position: center center;
-    background-attachment: fixed;
     background-size: cover;
-    margin-bottom: -50px;
+    background-attachment: fixed;
   };
   .buttomDivMobile {
     color: #ffffff;

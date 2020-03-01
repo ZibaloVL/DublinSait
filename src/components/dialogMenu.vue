@@ -23,7 +23,7 @@
           v-for="(img, index) in images"
           :key="index"
           :name="img"
-          class="flex-center column no-wrap"
+          class="flex-center column no-wrap backgroundMenu"
         >
           <q-btn
             v-close-popup

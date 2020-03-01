@@ -1,6 +1,13 @@
 // app global css in SCSS form
 .backgroundPage {
   background:url('~assets/background/Background.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+.backgroundMenu {
+  background:url('~assets/img/titul/IMG_2560.jpg');
+  
 }
 .backgroundPageLogo {
   background:url('~assets/background/Background_and_Logo_100.png')
