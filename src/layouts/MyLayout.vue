@@ -5,7 +5,8 @@
     <!--class="backgroundPage"-->
     <!-- change  class desktop-only -->
     <q-header
-      class="transparent desktop-only"
+      class="desktop-only"
+      style="background:rgba(0,0,0,0.1);"
     >
       <q-toolbar
         style="padding: 10px;"
@@ -21,8 +22,8 @@
         />
         <span>
           <q-img
-            style="width:128px; height:50px;"
-            src="~assets/logo/LogoDublin128.png"
+            style="width:200px; height:70px;"
+            src="~assets/logo_Dublin_green_2px.svg"
           />
         </span>
         <q-toolbar-title />

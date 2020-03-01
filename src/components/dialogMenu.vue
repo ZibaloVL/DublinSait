@@ -40,9 +40,9 @@
               style="height: auto; max-width: 1000px; overflow: hidden;"
             />
           </div>
-          <!--style="max-width: 1100px; height: auto;"-->
         </q-carousel-slide>
       </q-carousel>
+      <!--start menu mobile-->
       <div
         class="row mobile-only q-gutter-sm"
       >
@@ -53,7 +53,9 @@
           flat
           round
           dense
-          color="white"
+          color="green-9"
+          size="sm"
+          style="z-index:100; background:rgba(255,255,255,0.2); margin:10px;"
         />
         <div
           v-for="(img, index) in imagesMobile"
